@@ -26,7 +26,7 @@ defmodule ExMon do
   defp do_move({:ok, move}) do
     case move do
       :move_heal -> "Cura"
-      move -> Attack.attack_opponent(Game.turn(), move)
+      move -> Actions.attack(move)
     end
   end
 end
