@@ -4,7 +4,7 @@ defmodule ExMon.Game do
   def start(computer, player) do
     inital_value = %{computer: computer, player: player, turn: :player, status: :started}
     Agent.start_link(fn -> inital_value end, name: __MODULE__)
-    Status.print_start_game()
+    Status.print_round_message(Game.info())
   end
 
   def info do
